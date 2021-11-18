@@ -1,0 +1,90 @@
+@import "../../styles/variables.scss";
+@import '../../../node_modules/@sweetalert2/theme-dark/dark.css';
+
+
+.text-zone {
+    margin-block: 2rem;
+    padding-inline: 1rem;
+
+    .title:is(h1, h2, h3, h4, h5, h6) {
+        color: $acent;
+        font-size: calc(1.3em + 1vw);
+        margin-bottom: 0.5rem;
+    }
+
+    .title-description {
+        color: $text;
+        font-family: sans-serif;
+    }
+
+    .contact-form {
+        margin-top: 1rem;
+
+        .input__field {
+            width: 100%;
+            background: $dark;
+            height: 3.125rem;
+            font-size: 1rem;
+            border: 0;
+            color: $white;
+            padding: 0 20px;
+            
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px $dark inset !important;
+            color: $text-secundary;
+            -webkit-text-fill-color: $white !important;
+        }
+
+
+        button[type="submit"] {
+            background: $acent;
+            color: $white;
+            font-size: 1.5rem;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+            border: 0;
+            padding: 1rem 4rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+
+            &.half {
+                width: 49%;
+                margin-left: 2%;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            .input__label {
+                position: absolute;
+            }
+
+            textarea {
+                padding: 20px;
+                min-height: 150px;
+                resize: vertical;
+            }
+        }
+    }
+
+}
+.erroLi{
+    font-family: sans-serif;
+    color: $danger;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
