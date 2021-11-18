@@ -16,7 +16,7 @@ export default function Card({ title, description, image, url, repositorio }) {
             </div>
             <div className="card-footer">
                 <a rel="noreferrer" target="_blank" href={url}>Página</a>
-                <a rel="noreferrer" target="_blank" href={repositorio}>Repositório</a>
+                <a rel="noreferrer" target="_blank" href={repositorio}>Código</a>
             </div>
 
         </div>
