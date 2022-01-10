@@ -24,11 +24,9 @@ export default function Header() {
     const controlNavBar = useCallback(() => {
         const currentScroll = window.scrollY;
 
-        if (currentScroll > lastHeight.current && currentScroll > window.innerHeight - 100) {
-            console.log('down');
+        if (currentScroll  > lastHeight.current  && currentScroll > window.innerHeight - 100) {
             setShowHeader(false);
         } else {
-            console.log('up');
             setShowHeader(true);
         }
 
