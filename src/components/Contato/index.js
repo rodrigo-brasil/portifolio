@@ -36,14 +36,23 @@ export const Contato = () => {
                 <Typography align="center" >Preencha o formulário abaixo para esclarer suas dúvidas e dar início ao seu projeto!</Typography>
 
                 <FormWrapper>
-                    <form id="contact" autoComplete="off" onSubmit={handleSubmit((data) => {
-                        console.log(data)
-                          emailjs.send(process.env.REACT_APP_SERVICE, process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USER_ID)
-                              .then((result) => {
-                                  console.log(result.text);
-                              }, (error) => {
-                                 console.log(error.text);
-                              });
+                    <form id="contact" autoComplete="off" onSubmit={handleSubmit((data,e) => {
+                        emailjs.send(process.env.REACT_APP_SERVICE, process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USER_ID)
+                            .then((result) => {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Mensagem Enviada!',
+                                    text: 'Obrigado pelo contato, em breve responderei no seu e-mail!',
+                                })
+                                e.target.reset();
+                            }, (error) => {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Erro ao enviar mensagem!',
+                                    text: 'Tente outro meio disponivel na sessão sobre mim.',
+                                    footer:error.text,
+                                })
+                            });
                     })}>
 
                         <Row justify="space-between">
