@@ -13,7 +13,7 @@ export default function Card({ title, description, image, url, repositorio }) {
                 </ImageWrapper>
 
                 <ContentWrapper>
-                    <Typography as="h4" color={props=>props.theme.colors.primary} heading>{title}</Typography>
+                    <Typography as="h4" Color={props=>props.theme.colors.primary} heading>{title}</Typography>
                     <Typography clamp="2">{description}</Typography>
                     <LinkWrapper>
                     <a rel="noreferrer" target="_blank" href={url}>Ver Página<FiArrowUpRight/></a>

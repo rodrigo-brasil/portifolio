@@ -12,15 +12,16 @@ export const About = () => {
                 <Row gap="1rem" marginB="1rem">
                     <Col size="60%" gap="1rem">
                         <p>
-                            Sou um desenvolvedor full stack, com experiência em desenvolvimento de sistemas web.
-                            Atualmente realizando uma transição de carreira para a área de tecnologia, onde o ponto de partida foi o curso Certified Tech Developer na Digital House, o qual teve inicio no dia 24 de maio.
+                            Meu nome é Rodrigo, tenho formação em engenharia elétrica. Atualmente realizando uma transição de carreira para a área de tecnologia, ao longo dos últimos dois anos venho estudando e aperfeiçoando tanto habilidades técnicas como habilidades comportamentais.
                         </p>
                         <p>
-                            Ao longo desses 6 meses já foram tratados muitos ponto importante para minha formação, como Métodos Ágeis, Design Thinking, Trabalho Colaborativo, Infraestrutura, Teste de Software e também tive a oportunidade de trabalhar com as seguinte linguagem de programação: JavaScript, HTML, CSS, MySQL, Java, React.
+                            No dia 24 de maio de 2021, iniciei o curso Certified Tech Developer na Digital House, onde aprendi e coloquei em prática muitos pontos importante para minha formação, como Métodos Ágeis, Design Thinking, Trabalho Colaborativo, Infraestrutura, Teste de Software e também tive a oportunidade de trabalhar com as seguintes ferramentas: JavaScript, HTML, CSS, MySQL, MongoDB, Java, React e varias bibliotecas.
                         </p>
+
                         <p>
-                            Meu foco é desenvolver soluções que melhorem a vida das pessoas ao meu redor.
+                            Meu objetivo é uma recolocação no mercado de trabalho, a oportunidade de aprender mais, além de desenvolver um código limpo e organizado, que possa ser utilizado por outras pessoas.
                         </p>
+                        
                     </Col>
                     <Col size="35%">
 
@@ -46,22 +47,14 @@ export const About = () => {
                 </Row>
                 <Typography as="h3" align="center" heading >Habilidades E Conhecimentos</Typography>
                 <Row>
-                    <Col size="50%">
-                        <ul class="list-style-2 list-style-light text-light">
-                            <li><span class="fw-600 me-2">Linguagens:</span>JavaScript, HTML, CSS, MySQL, Java, React</li>
-                            <li><span class="fw-600 me-2">Frameworks:</span>React, Node.js, Express, Bootstrap, Materialize, Styled Components</li>
-                            <li><span class="fw-600 me-2">Bibliotecas:</span>React Hooks, Axios, React Router, Redux, Styled Components, React-Spring</li>
-                            <li><span class="fw-600 me-2">Ferramentas:</span>Git, Github, Visual Studio Code, Netlify, Heroku</li>
-                        </ul>
-                    </Col>
-                    <Col size="50%">
-                        <ul class="list-style-2 list-style-light text-light">
-                            <li><span>Sistemas:</span>Windows, Linux, MacOS</li>
-                            <li><span>Bancos de Dados:</span>MySQL, MongoDB</li>
-                            <li><span>Design:</span>Photoshop, Illustrator, InDesign</li>
-                            <li><span>Outros:</span>Git, Github, Visual Studio Code, Netlify, Heroku</li>
-                        </ul>
-                    </Col>
+                    <Col>
+                        <Dados>
+                            <li><Typography as="span" weight="600">Linguagens : </Typography>JavaScript, HTML, CSS, Java, C#</li>
+                            <li><Typography as="span" weight="600">Frameworks e Bibliotecas : </Typography>React, Node.js, Express, Spring Boot, React Hooks, Axios, React Router, Bootstrap, Styled Components</li>
+                            <li><Typography as="span" weight="600">Ferramentas : </Typography>Git, Github, Visual Studio Code, Vercel, Netlify, Heroku, AWS, Docker</li>
+                            <li><Typography as="span" weight="600">Bancos de Dados : </Typography>MySQL, MongoDB, PostgreSQL</li>
+                        </Dados>
+                    </Col>                  
                 </Row>
             </Container>
         </Section>

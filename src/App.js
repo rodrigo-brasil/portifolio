@@ -54,8 +54,8 @@ function App() {
       <Header />
       <Banner urlImage={myImage}>
         <Typography as="h1" heading >Olá, Me chamo
-          <Typography as="span" color={theme.colors.primary}> Rodrigo</Typography></Typography>
-        <Typography as="p" color={theme.colors.textLight} style={{ 'paddingRight': '16%' }}>Sou um desenvolvedor full stack. Sempre em busca de soluções inovadoras que trazem melhora para a vida das pessoas ao meu redor.</Typography>
+          <Typography as="span" Color={theme.colors.primary}> Rodrigo</Typography></Typography>
+        <Typography as="p" Color={theme.colors.textLight} style={{ 'paddingRight': '16%' }}>Sou um desenvolvedor full stack. Sempre em busca de soluções inovadoras que trazem melhora para a vida das pessoas ao meu redor.</Typography>
       </Banner>
       <About />
       <Galeria />

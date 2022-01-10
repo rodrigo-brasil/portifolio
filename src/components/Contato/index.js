@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
 
 import styled, { css } from 'styled-components'
@@ -23,46 +24,7 @@ export const Contato = () => {
         mode: "onChange",
     });
 
-    /*     const validarFormulario = ({ nome, email, mensagem }) => {
-            const erros = []
-    
-            if (!nome || nome.length < 3) erros.push('Nome inválido')
-            if (!email || email.indexOf('@') === -1) erros.push('Email inválido')
-            if (!mensagem || mensagem.length < 10) erros.push('Mensagem inválida')
-    
-            return erros
-        }
-    
-        const handleSubmit = (e) => {
-            e.preventDefault()
-            const form = new FormData(e.target);
-            const data = {
-                nome: form.get('nome'),
-                email: form.get('email'),
-                mensagem: form.get('mensagem')
-            }
-    
-            const erros = validarFormulario(data)
-            if (erros.length > 0) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Erro',
-                    text: 'Preencha os campos corretamente',
-                    html: `<ul>
-                    ${erros.map((erro, index) => `<li className="erroLi" key="${index}">${erro}</li>`).join('')}
-                    </ul>`
-                })
-            } else {
-    
-                Swal.fire({
-                    title: 'Mensagem enviada com sucesso!',
-                    text: 'Em breve entraremos em contato com você!',
-                    icon: 'success',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: '#51b77d'
-                })
-            }
-        } */
+
 
     return (
 
@@ -74,40 +36,48 @@ export const Contato = () => {
                 <Typography align="center" >Preencha o formulário abaixo para esclarer suas dúvidas e dar início ao seu projeto!</Typography>
 
                 <FormWrapper>
-                    <form id="contact" autoComplete="off" onSubmit={handleSubmit((data) => console.log(data))}>
+                    <form id="contact" autoComplete="off" onSubmit={handleSubmit((data) => {
+                        console.log(data)
+                          emailjs.send(process.env.REACT_APP_SERVICE, process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USER_ID)
+                              .then((result) => {
+                                  console.log(result.text);
+                              }, (error) => {
+                                 console.log(error.text);
+                              });
+                    })}>
 
                         <Row justify="space-between">
-                        <FormGroup half="true">
-                            <Label htmlFor="name">Nome</Label>
-                            <Input
-                                name="name"
-                                id="name"
-                                type="text"
-                                {...register("name", {
-                                    required: "Campo vazio",
-                                })}
-                            />
-                            {errors.name && (
-                                <ErrorText>{errors.name?.message}</ErrorText>
-                            )}
-                        </FormGroup><FormGroup half="true">
-                            <Label htmlFor="email">Email</Label>
-                            <Input
-                                id="email"
-                                name="email"
-                                type="email"
-                                {...register("email", {
-                                    required: "Campo vazio",
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                        message: "Email inválido",
-                                    },
-                                })}
-                            />
-                            {errors.email && (
-                                <ErrorText>{errors.email?.message}</ErrorText>
-                            )}
-                        </FormGroup>
+                            <FormGroup half="true">
+                                <Label htmlFor="name">Nome</Label>
+                                <Input
+                                    name="name"
+                                    id="name"
+                                    type="text"
+                                    {...register("name", {
+                                        required: "Campo vazio",
+                                    })}
+                                />
+                                {errors.name && (
+                                    <ErrorText>{errors.name?.message}</ErrorText>
+                                )}
+                            </FormGroup><FormGroup half="true">
+                                <Label htmlFor="email">Email</Label>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    {...register("email", {
+                                        required: "Campo vazio",
+                                        pattern: {
+                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                            message: "Email inválido",
+                                        },
+                                    })}
+                                />
+                                {errors.email && (
+                                    <ErrorText>{errors.email?.message}</ErrorText>
+                                )}
+                            </FormGroup>
                         </Row>
 
                         <FormGroup>
@@ -139,7 +109,7 @@ export const Contato = () => {
                             )}
                         </FormGroup>
 
-                        <Submit type="submit">Enviar Mensagem <FaArrowRight size="1.5em"/></Submit>
+                        <Submit type="submit">Enviar Mensagem <FaArrowRight size="1.5em" /></Submit>
 
                     </form>
 

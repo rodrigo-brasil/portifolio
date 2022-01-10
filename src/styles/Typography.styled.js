@@ -6,9 +6,10 @@ export const Typography = styled.p`
     font-size: ${props => props.size ? props.size : 'revert'};
     font-weight: ${props => props.weight ? props.weight : 'revert'};
 
-    ${props => props.color && css`
-        color: ${props.color};
+    ${props => props.Color && css`
+        color: ${props.Color};
     `}
+
 
     ${props => props.align && css`
         text-align: ${props.align};
@@ -23,7 +24,7 @@ export const Typography = styled.p`
     `}
 
     ${props => props.heading && css`
-        color: ${props => props.color ? props.color : '#fff'};
+        color: ${props => props.Color ? props.Color : '#fff'};
         font-family: ${props => props.theme.fonts.secondary};
         font-weight: 700;
         letter-spacing: 1px;
