@@ -1,88 +1,220 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
-import './style.scss'
+
+import styled, { css } from 'styled-components'
+
+import { Row } from '../../styles/Row.styled'
+import Container from '../../styles/Container.styled'
+import Typography from '../../styles/Typography.styled'
+import { Input } from './Input'
+import { Label } from './Label'
+import { TextArea } from './TextArea'
+
+import { FaArrowRight } from "react-icons/fa";
 
 export const Contato = () => {
 
-    const validarFormulario = ({ nome, email, mensagem }) => {
-        const erros = []
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        mode: "onChange",
+    });
 
-        if (!nome || nome.length < 3) erros.push('Nome inválido')
-        if (!email || email.indexOf('@') === -1) erros.push('Email inválido')
-        if (!mensagem || mensagem.length < 10) erros.push('Mensagem inválida')
-
-        return erros
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const form = new FormData(e.target);
-        const data = {
-            nome: form.get('nome'),
-            email: form.get('email'),
-            mensagem: form.get('mensagem')
+    /*     const validarFormulario = ({ nome, email, mensagem }) => {
+            const erros = []
+    
+            if (!nome || nome.length < 3) erros.push('Nome inválido')
+            if (!email || email.indexOf('@') === -1) erros.push('Email inválido')
+            if (!mensagem || mensagem.length < 10) erros.push('Mensagem inválida')
+    
+            return erros
         }
-
-        const erros = validarFormulario(data)
-        if (erros.length > 0) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Erro',
-                text: 'Preencha os campos corretamente',
-                html: `<ul>
-                ${erros.map((erro, index) => `<li className="erroLi" key="${index}">${erro}</li>`).join('')}
-                </ul>`             
-            })
-        } else {
-
-            Swal.fire({
-                title: 'Mensagem enviada com sucesso!',
-                text: 'Em breve entraremos em contato com você!',
-                icon: 'success',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#51b77d'
-            })
-        }
-    }
+    
+        const handleSubmit = (e) => {
+            e.preventDefault()
+            const form = new FormData(e.target);
+            const data = {
+                nome: form.get('nome'),
+                email: form.get('email'),
+                mensagem: form.get('mensagem')
+            }
+    
+            const erros = validarFormulario(data)
+            if (erros.length > 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Preencha os campos corretamente',
+                    html: `<ul>
+                    ${erros.map((erro, index) => `<li className="erroLi" key="${index}">${erro}</li>`).join('')}
+                    </ul>`
+                })
+            } else {
+    
+                Swal.fire({
+                    title: 'Mensagem enviada com sucesso!',
+                    text: 'Em breve entraremos em contato com você!',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#51b77d'
+                })
+            }
+        } */
 
     return (
 
-        <div className="container text-zone" id="contato">
+        <Section id="contato">
+            <Container>
 
-            <h2 className="title">Entre em contato</h2>
+                <Typography as="h1" align="center" heading>Entre em contato</Typography>
 
-            <p className="title-description">Preencha o formulário abaixo para esclarer suas dúvidas e dar início ao seu projeto!</p>
+                <Typography align="center" >Preencha o formulário abaixo para esclarer suas dúvidas e dar início ao seu projeto!</Typography>
 
-            <div className="contact-form">
-                <form id="contact" autocomplete="off" onSubmit={handleSubmit}>
+                <FormWrapper>
+                    <form id="contact" autoComplete="off" onSubmit={handleSubmit((data) => console.log(data))}>
 
-                    <div className="form-group half">
-                        <input className="input__field" placeholder="Name" type="text" name="name" />
-                        <label className="input__label"></label>
-                    </div>
+                        <Row justify="space-between">
+                        <FormGroup half="true">
+                            <Label htmlFor="name">Nome</Label>
+                            <Input
+                                name="name"
+                                id="name"
+                                type="text"
+                                {...register("name", {
+                                    required: "Campo vazio",
+                                })}
+                            />
+                            {errors.name && (
+                                <ErrorText>{errors.name?.message}</ErrorText>
+                            )}
+                        </FormGroup><FormGroup half="true">
+                            <Label htmlFor="email">Email</Label>
+                            <Input
+                                id="email"
+                                name="email"
+                                type="email"
+                                {...register("email", {
+                                    required: "Campo vazio",
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                        message: "Email inválido",
+                                    },
+                                })}
+                            />
+                            {errors.email && (
+                                <ErrorText>{errors.email?.message}</ErrorText>
+                            )}
+                        </FormGroup>
+                        </Row>
 
-                    <div className="form-group half">
-                        <input className="input__field" placeholder="Email" type="email" name="email" />
-                        <label className="input__label"></label>
-                    </div>
+                        <FormGroup>
+                            <Label htmlFor="subject">Assunto</Label>
+                            <Input
+                                id="subject"
+                                name="subject"
+                                type="text"
+                                {...register("subject", {
+                                    required: "Campo vazio",
+                                })}
+                            />
+                            {errors.subject && (
+                                <ErrorText>{errors.subject?.message}</ErrorText>
+                            )}
+                        </FormGroup>
 
-                    <div className="form-group">
-                        <input className="input__field" placeholder="Subject" type="text" name="subject" />
-                        <label className="input__label"></label>
-                    </div>
+                        <FormGroup>
+                            <TextArea
+                                name="message"
+                                id="message"
+                                {...register("message", {
+                                    required: "Campo vazio",
+                                })}
+                            ></TextArea>
+                            <Label htmlFor="message">Mensagem</Label>
+                            {errors.message && (
+                                <ErrorText>{errors.message?.message}</ErrorText>
+                            )}
+                        </FormGroup>
 
-                    <div className="form-group">
-                        <textarea className="input__field" placeholder="Message" name="msg"></textarea>
-                        <label className="input__label"></label>
-                    </div>
+                        <Submit type="submit">Enviar Mensagem <FaArrowRight size="1.5em"/></Submit>
 
-                    <button type="submit">Enviar</button>
+                    </form>
 
-                </form>
-
-            </div>
-
-        </div>
+                </FormWrapper>
+            </Container>
+        </Section>
 
     )
 }
+
+const Section = styled(Row)`
+                padding-block: 3rem;
+                text-align: left;
+                background-color:${props => props.theme.colors.bodyLight};
+                position: relative;
+                color: ${props => props.theme.colors.textLight};
+`;
+
+
+const FormWrapper = styled.div`
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    max-width: 800px;
+    margin-inline: auto;
+
+    @media (max-width: ${props => props.theme.breakpoints.sm}) {
+        padding-inline:0;
+`;
+
+
+const FormGroup = styled.div`
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top:1.8rem;
+
+    &:focus-within > label {
+        border:2px solid ${props => props.theme.colors.primary};
+        border-bottom: 0;
+    }
+    
+
+    ${props => props.half && css`
+        max-width: 49%;
+    `}
+
+`;
+
+const ErrorText = styled.span`
+    color: ${props => props.theme.colors.error};
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+`;
+
+const Submit = styled.button`
+            background: ${props => props.theme.colors.body};
+            color: ${props => props.theme.colors.primary};
+            border-radius: 1rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-family: ${props => props.theme.fonts.secondary};
+            text-transform: uppercase;
+            border: 0;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+
+            &:hover {
+                background-image: linear-gradient(to right, ${props => props.theme.colors.body}, ${props => props.theme.colors.bodyLight});
+                box-shadow:  ${props => props.theme.boxShadows.primary};
+`;
+

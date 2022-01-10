@@ -1,24 +1,117 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-
-import './style.scss'
+import styled from 'styled-components'
+import { Typography } from '../../styles/Typography.styled'
+import {FiArrowUpRight} from 'react-icons/fi'
 
 export default function Card({ title, description, image, url, repositorio }) {
     return (
-        <div className="card">
-            <div className="card-img">
-                <img src={image} alt="..." />
-            </div>
+        <PortifolioCard>
+            <InnerCard>
+                <ImageWrapper>
+                    <img src={image} alt="..." />
+                </ImageWrapper>
 
-            <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{description}</p>
-            </div>
-            <div className="card-footer">
-                <a rel="noreferrer" target="_blank" href={url}>Página</a>
-                <a rel="noreferrer" target="_blank" href={repositorio}>Código</a>
-            </div>
+                <ContentWrapper>
+                    <Typography as="h4" color={props=>props.theme.colors.primary} heading>{title}</Typography>
+                    <Typography clamp="2">{description}</Typography>
+                    <LinkWrapper>
+                    <a rel="noreferrer" target="_blank" href={url}>Ver Página<FiArrowUpRight/></a>
+                    <a rel="noreferrer" target="_blank" href={repositorio}>Git<FiArrowUpRight/></a>
+                    </LinkWrapper>
 
-        </div>
+                </ContentWrapper>
+            </InnerCard>
+        </PortifolioCard>
     )
 }
+
+const PortifolioCard = styled.div`
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 1.875rem;	
+    padding-inline: 0.938rem;
+    position: relative;
+
+    @media (min-width: ${props => props.theme.breakpoints.md}) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    @media (min-width: ${props => props.theme.breakpoints.xl}) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+`;
+
+const InnerCard = styled.div`
+    background: ${props => props.theme.colors.bgLight};
+    border-radius: 20px;
+    box-shadow: ${props => props.theme.boxShadows.primary};
+    display: inline-block;
+    height: 100%;
+    padding: 1.875rem;
+    position: relative;
+    text-align: left;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+
+    &:before {
+    background: linear-gradient(to right bottom,#212428,#16181c);
+    border-radius: 20px;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: 0.4s;
+    width: 100%;
+    z-index: -1;
+    }
+
+    &:hover{
+         img{
+            transform: scale(1.1);
+        }
+
+        &:before { opacity: 1; }	
+    }
+`;
+
+const ImageWrapper = styled.div`
+    border-radius: 10px;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+
+   & >img {
+        height: 100%;
+        object-fit: fill;
+        transition: all .4s;
+        width: 100%;
+    }
+`;
+
+const ContentWrapper = styled.div`
+    padding-top: 1rem;
+`;
+
+const LinkWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    > a{
+        display: inline-flex;
+        align-items: center;
+        color: ${props => props.theme.colors.gray};
+        font-weight: bold;
+        letter-spacing: 2px;
+        &:hover {
+        color: ${props => props.theme.colors.primary};
+        text-decoration: underline;
+        }
+    }
+`;
