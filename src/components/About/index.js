@@ -12,14 +12,14 @@ export const About = () => {
                 <Row gap="1rem" marginB="1rem">
                     <Col size="60%" gap="1rem">
                         <p>
-                            Meu nome é Rodrigo, tenho formação em engenharia elétrica. Atualmente realizando uma transição de carreira para a área de tecnologia, ao longo dos últimos dois anos venho estudando e aperfeiçoando tanto habilidades técnicas como habilidades comportamentais.
+                            Meu nome é Rodrigo e tenho formação em engenharia elétrica. Atualmente, estou realizando uma transição de carreira para a área de tecnologia. Ao longo dos últimos dois anos venho estudando e aperfeiçoando tanto habilidades técnicas como habilidades comportamentais.
                         </p>
                         <p>
-                            No dia 24 de maio de 2021, iniciei o curso Certified Tech Developer na Digital House, onde aprendi e coloquei em prática muitos pontos importante para minha formação, como Métodos Ágeis, Design Thinking, Trabalho Colaborativo, Infraestrutura, Teste de Software e também tive a oportunidade de trabalhar com as seguintes ferramentas: JavaScript, HTML, CSS, MySQL, MongoDB, Java, React e varias bibliotecas.
+                            Em maio de 2021, iniciei o curso Certified Tech Developer na Digital House, aonde aprendi e coloquei em prática muitos pontos importante para minha formação como: Métodos Ágeis, Design Thinking, Trabalho Colaborativo, Infraestrutura, Teste de Software e também tive a oportunidade de trabalhar com as seguintes ferramentas: JavaScript, HTML, CSS, MySQL, MongoDB, Java, React e várias bibliotecas.
                         </p>
 
                         <p>
-                            Meu objetivo é uma recolocação no mercado de trabalho, a oportunidade de aprender mais, além de desenvolver um código limpo e organizado, que possa ser utilizado por outras pessoas.
+                            Meu objetivo é desenvolver um código limpo, organizado e fácil de entender, que atenda as necessidades e prioridades do grupo que estarei trabalhando.
                         </p>
                         
                     </Col>
