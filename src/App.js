@@ -55,7 +55,7 @@ function App() {
       <Banner urlImage={myImage}>
         <Typography as="h1" heading >Olá, Me chamo
           <Typography as="span" Color={theme.colors.primary}> Rodrigo</Typography></Typography>
-        <Typography as="p" Color={theme.colors.textLight} style={{ 'paddingRight': '16%' }}>Sou um desenvolvedor full stack. Sempre em busca de soluções inovadoras que trazem melhora para a vida das pessoas ao meu redor.</Typography>
+        <Typography as="p" Color={theme.colors.textLight} style={{ 'paddingRight': '16%' }}>Sou um desenvolvedor web full stack. Com uma base sólida em Java, JavaScript, CSS, HTML, um ótimo conhecimento em orientação a objetos e padrões de projeto. Sempre em constante evolução.</Typography>
       </Banner>
       <About />
       <Galeria />
