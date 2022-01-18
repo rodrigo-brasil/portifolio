@@ -50,6 +50,10 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         outline: none;
         border: none;
+
+        &:hover {	
+            color: ${({ theme }) => theme.colors.primary};
+        }
     }
 
     ul {

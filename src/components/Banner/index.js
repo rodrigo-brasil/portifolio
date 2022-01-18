@@ -80,6 +80,7 @@ const Button = styled.a`
     &:hover {   
         background: ${props => props.theme.colors.bgDark};
         box-shadow: ${props => `${props.theme.boxShadows.secondary},${props.theme.boxShadows.primary} `};
+        color: ${props => props.theme.colors.primary};
     }
 
     @media (max-width: ${props => props.theme.breakpoints.sm}) {

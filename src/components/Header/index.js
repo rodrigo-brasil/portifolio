@@ -214,6 +214,10 @@ const NavbarItemLogo = styled.div`
     padding-block: 0.5rem;
     color: ${props => props.theme.colors.gray};
 
+    &:hover {
+        color: ${props => props.theme.colors.gray};
+    }
+
     & :is(h1, h2, h3, h4, h5, h6) {
         font-weight: 500;
     }

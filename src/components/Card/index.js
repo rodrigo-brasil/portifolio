@@ -1,28 +1,46 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Typography } from '../../styles/Typography.styled'
-import {FiArrowUpRight} from 'react-icons/fi'
+import { FiChevronRight } from 'react-icons/fi'
+import { PortfolioModal } from "../Modal-portifolio";
 
 export default function Card({ title, description, image, url, repositorio }) {
+    const [show, setShow] = useState(false);
     return (
-        <PortifolioCard>
-            <InnerCard>
-                <ImageWrapper>
-                    <img src={image} alt="..." />
-                </ImageWrapper>
+        <>
+            <PortifolioCard
+                onClick={() => setShow(true)}
+                onKeyPress={() => setShow(true)}
+                role="button"
+                tabIndex="-1"
+            >
+                <InnerCard>
+                    <ImageWrapper>
+                        <img src={image} alt="..." />
+                    </ImageWrapper>
 
-                <ContentWrapper>
-                    <Typography as="h4" Color={props=>props.theme.colors.primary} heading>{title}</Typography>
-                    <Typography clamp="2">{description}</Typography>
-                    <LinkWrapper>
-                    <a rel="noreferrer" target="_blank" href={url}>Ver Página<FiArrowUpRight/></a>
-                    <a rel="noreferrer" target="_blank" href={repositorio}>Git<FiArrowUpRight/></a>
-                    </LinkWrapper>
+                    <ContentWrapper>
+                        <Typography as="h4" Color={props => props.theme.colors.primary} heading>{title}</Typography>
+                        <Typography clamp="2">{description}</Typography>
+                        <LinkWrapper>
+                            <a rel="noreferrer" target="_blank" href={url}>Ver Página<FiChevronRight /></a>
+                            <a rel="noreferrer" target="_blank" href={repositorio}>Git<FiChevronRight /></a>
+                        </LinkWrapper>
 
-                </ContentWrapper>
-            </InnerCard>
-        </PortifolioCard>
+                    </ContentWrapper>
+                </InnerCard>
+            </PortifolioCard>
+            <PortfolioModal
+                show={show}
+                setShow={setShow}
+                title={title}
+                image={image}
+                texts={description}
+                url={url}
+                repositorio={repositorio}
+            />
+        </>
     )
 }
 

@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import GlobalStyles from './styles/Global'
-
 import myImage from './assets/img2.jpg'
 
 import Header from './components/Header';
@@ -26,6 +26,7 @@ const theme = {
     text: '#fff',
     textLight: '#dee3e4',
     gray: '#f6f6f6',
+    darkGray:'#878e99',
     error: '#ff0000',
   },
   breakpoints: {
