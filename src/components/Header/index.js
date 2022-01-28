@@ -62,10 +62,10 @@ export default function Header() {
 
                 <NavbarItemSocialList >
 
-                    <SocialLink path="#">
+                    <SocialLink path="https://github.com/rodrigo-brasil">
                         <FaGithub size='2rem' />
                     </SocialLink>
-                    <SocialLink path="#">
+                    <SocialLink path="https://www.linkedin.com/in/rodrigo-brasil-272312178/">
                         <FaLinkedinIn size='2rem' />
                     </SocialLink>
                 </NavbarItemSocialList>
