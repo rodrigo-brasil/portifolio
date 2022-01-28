@@ -5,21 +5,22 @@ import campo from './assets/campo_minado.png'
 import galeria from './assets/galeria.png'
 import lugares from './assets/lugares.png'
 import ecommerce from './assets/ecommerce.png'
+import financas from './assets/financas.jpg'
 
 
 export default [
-    /* {
+    {
         id: 7,
         title: 'Controle Financeiro',
         description: 'Um controle de despesas feito em ReactJS com o uso de Context API e custom Hooks.',
-        image: ecommerce,
-        url: 'https://ctd-checkpoint-integrador-frontend-three.vercel.app/',
-        repositorio: 'https://github.com/rodrigo-brasil/ctd-checkpoint-integrador-frontend'
-    }, */
+        image: financas,
+        url: 'https://controle-financeiro-taupe.vercel.app/',
+        repositorio: 'https://github.com/rodrigo-brasil/controle-financeiro'
+    },
     {
         id: 6,
-        title: 'Ecommerce',
-        description: 'Um e-commerce com ReactJS e Spring Boot',
+        title: 'E-commerce',
+        description: 'Um e-commerce com ReactJS e Spring Boot, projeto realizado no curdo fullstack da digital house.',
         image: ecommerce,
         url: 'https://ctd-checkpoint-integrador-frontend-three.vercel.app/',
         repositorio: 'https://github.com/rodrigo-brasil/ctd-checkpoint-integrador-frontend'
