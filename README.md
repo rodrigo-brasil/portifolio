@@ -1,10 +1,49 @@
-# Instruções e requisitos do entregável
+<h1 align="center">
+  💻<br>Meu Portfólio
+</h1>
 
-Para esse projeto, você deverá construir uma landing page componentizada de portfólio com seus link e projetos. O site deverá seguir os seguintes requisitos:
+<h4 align="center">
+  Portfólio criado com o intuito de mostrar meus projetos ao decorrer da minha carreira e estudos.
+</h4>
 
-O projeto deve ser feito com SASS.
-A landing page deve ter um header com uma logo ou texto e itens que fazem link com as seções do site.
-A segunda seção deverá ser um banner com uma imagem de fundo que conterá um texto de descrição falando um pouco sobre você e uma foto sua.
-Logo depois do banner, haverá a seção de projetos feitos dentro e fora da DH (Esses projetos podem ser fictícios). Essa lista, deverá ser renderizada a partir de um .map(). 
-Os projetos deverão ser listados em formato de cards, uma imagem com o título e os links para o github e para o site desses projetos (escolha um ícone para quando clicado, ocorra o redirecionamento). Projetos a serem listados, no mínimo 3.
-A última seção do site será um footer com informações de contato. (Linkedin, Github e email). Esses itens deverão utilizar ícones para fazer o redirecionamento.
+![Resultado final do projeto](src/assets/image/preview.png)
+
+<h4 align="center"><a href="https://rodrigobrasil.dev.br/">Clique para visitar o projeto</a></h4>
+
+## 📚 Seções
+O site é composto por 5 seções diferentes:
+
+- **Home:** Nele temos uma breve apresentação;
+- **Quem sou:** Nessa seção tenho uma descrição dizendo um pouco sobre quem sou;
+- **Conhecimentos:** Nele apresentamos meus conhecimentos em algumas linguagens, frameworks e ferramentas ;
+- **Projetos:** Apresenta alguns projetos desenvolvidos e com link direto para os respectivos códigos no GitHub;
+- **Contato:** Um formulário para envio de email;
+
+---
+
+## 💼 Tecnologias utilizadas
+Para o desenvolvimento deste site utilizei as seguintes tecnologias:
+
+- HTML;
+- JavaScript;
+- React
+- React hook-form
+- Styled-components
+- Dotenv
+- React Bootstrap
+
+---
+
+## 🦄 Autor<br>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/rodrigo-brasil">
+        <img src="https://avatars.githubusercontent.com/u/66784288" width="100px;" alt="Foto do Rodrigo Brasil no GitHub"/><br>
+        <sub>
+          <b>Rodrigo Brasil</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
