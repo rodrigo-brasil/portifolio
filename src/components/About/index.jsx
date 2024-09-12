@@ -26,15 +26,15 @@ export const About = () => {
         </Typography>
         <Row gap="1rem" marginB="1rem">
           <Col size="60%" gap="1rem">
-            <p>
+            <Typography>
               Meu nome é Rodrigo e tenho formação em engenharia elétrica.
               Durante a pandemia de Covid-19, decidi mudar de carreira e me
               dedicar à programação. Realizei uma transição de carreira para a
               área de tecnologia devido ao meu gosto pela programação e a
               oportunidade de realizar o curso Certified Tech Developer com
               bolsa oferecida pelo Mercado Livre e Globant.
-            </p>
-            <p>
+            </Typography>
+            <Typography>
               Em maio de 2021, iniciei o curso Certified Tech Developer na
               Digital House, onde aprendi e coloquei em prática muitos pontos
               importantes para minha formação, como Métodos Ágeis, Design
@@ -42,41 +42,44 @@ export const About = () => {
               e também tive a oportunidade de trabalhar com as seguintes
               ferramentas: JavaScript, HTML, CSS, MySQL, MongoDB, Java, React e
               várias bibliotecas.
-            </p>
-            <p>
+            </Typography>
+            <Typography>
               Concluí o curso Certified Tech Developer - Back End Specialist e o
               curso Professional Developer - Full Stack, ambos pela Digital
               House.
-            </p>
-            <p>
+            </Typography>
+            <Typography mb={"0px"}>
               Você pode ver meus certificados nos links abaixo:
-              <ul>
-                <li>
-                  <a
-                    href="https://drive.google.com/file/d/1hv73gUvAyGXGgWi-AT43kev1XowQnoNC/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Certified Tech Developer - Full Stack
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://drive.google.com/file/d/1T_Esw1NYJBELu8LNB4Z5i0EbPM34UeBW/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Certified Tech Developer - Back End Specialist
-                  </a>
-                </li>
-              </ul>
-            </p>
+            </Typography>
+            <ul style={{ listStyleType: "square" }}>
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/1hv73gUvAyGXGgWi-AT43kev1XowQnoNC/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "underline" }}
+                >
+                  Certified Tech Developer - Full Stack
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/1T_Esw1NYJBELu8LNB4Z5i0EbPM34UeBW/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "underline" }}
+                >
+                  Certified Tech Developer - Back End Specialist
+                </a>
+              </li>
+            </ul>
             <p>
               Atualmente, trabalho na{" "}
               <a
                 href="https://stakd.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ textDecoration: "underline" }}
               >
                 Stakd
               </a>{" "}

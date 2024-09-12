@@ -37,22 +37,31 @@ export const Contato = () => {
 
                 <FormWrapper>
                     <form id="contact" autoComplete="off" onSubmit={handleSubmit((data,e) => {
-                        emailjs.send(process.env.REACT_APP_SERVICE, process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USER_ID)
-                            .then((result) => {
+                          emailjs
+                            .send(
+                              import.meta.env.VITE_APP_SERVICE,
+                              import.meta.env.VITE_APP_TEMPLATE_ID,
+                              data,
+                              import.meta.env.VITE_APP_USER_ID
+                            )
+                            .then(
+                              (result) => {
                                 Swal.fire({
-                                    icon: 'success',
-                                    title: 'Mensagem Enviada!',
-                                    text: 'Obrigado pelo contato, em breve responderei no seu e-mail!',
-                                })
+                                  icon: "success",
+                                  title: "Mensagem Enviada!",
+                                  text: "Obrigado pelo contato, em breve responderei no seu e-mail!",
+                                });
                                 e.target.reset();
-                            }, (error) => {
+                              },
+                              (error) => {
                                 Swal.fire({
-                                    icon: 'error',
-                                    title: 'Erro ao enviar mensagem!',
-                                    text: 'Tente outro meio disponivel na sessão sobre mim.',
-                                    footer:error.text,
-                                })
-                            });
+                                  icon: "error",
+                                  title: "Erro ao enviar mensagem!",
+                                  text: "Tente outro meio disponivel na sessão sobre mim.",
+                                  footer: error.text,
+                                });
+                              }
+                            );
                     })}>
 
                         <Row justify="space-between">
